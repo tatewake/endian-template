@@ -195,9 +195,8 @@ typedef tLittleEndian<uint16_t>     leuint16_t;
 typedef tLittleEndian<uint32_t>     leuint32_t;
 typedef tLittleEndian<uint64_t>     leuint64_t;
 
-typedef tLittleEndian<float16_t>    lefloat16_t;
-typedef tLittleEndian<float32_t>    lefloat32_t;
-typedef tLittleEndian<float64_t>    lefloat64_t;
+typedef tLittleEndian<float>        lefloat32_t;
+typedef tLittleEndian<double>       lefloat64_t;
 
 typedef tBigEndian<int16_t>         beint16_t;
 typedef tBigEndian<int32_t>         beint32_t;
@@ -207,6 +206,5 @@ typedef tBigEndian<uint16_t>        beuint16_t;
 typedef tBigEndian<uint32_t>        beuint32_t;
 typedef tBigEndian<uint64_t>        beuint64_t;
 
-typedef tBigEndian<float16_t>       befloat16_t;
-typedef tBigEndian<float32_t>       befloat32_t;
-typedef tBigEndian<float64_t>       befloat64_t;
+typedef tBigEndian<float>           befloat32_t;
+typedef tBigEndian<double>          befloat64_t;
