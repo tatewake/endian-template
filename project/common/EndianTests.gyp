@@ -24,6 +24,7 @@
 		['OS=="ios"', {
 			'xcode_settings': {
 				'SDKROOT': 'iphoneos',
+				'INFOPLIST_FILE': '../../rsrc/<@(OS)/any.plist',
 			}, # xcode_settings
 		}],  # OS=="ios"
 	],  # conditions
