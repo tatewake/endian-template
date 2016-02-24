@@ -34,35 +34,35 @@
 class tEndianTests
 {
 public:
-	tEndianTests()
-	{
+    tEndianTests()
+    {
         testSizeOf();
-		testPlatMemIsMem();
-		testOtherMemIsSwapped();
-		testArithmeticAssignment();
-		testLittleCompoundArithmeticAssignment();
-		testBigCompoundArithmeticAssignment();
+        testPlatMemIsMem();
+        testOtherMemIsSwapped();
+        testArithmeticAssignment();
+        testLittleCompoundArithmeticAssignment();
+        testBigCompoundArithmeticAssignment();
         testBigIsBig();
         testLittleIsLittle();
-	}
+    }
 
     void testSizeOf()
-	{
-		assert(sizeof(leuint64_t) == 8);
-		assert(sizeof(leuint32_t) == 4);
-		assert(sizeof(leuint16_t) == 2);
-		assert(sizeof(leint64_t) == 8);
-		assert(sizeof(leint32_t) == 4);
-		assert(sizeof(leint16_t) == 2);
+    {
+        assert(sizeof(leuint64_t) == 8);
+        assert(sizeof(leuint32_t) == 4);
+        assert(sizeof(leuint16_t) == 2);
+        assert(sizeof(leint64_t) == 8);
+        assert(sizeof(leint32_t) == 4);
+        assert(sizeof(leint16_t) == 2);
         assert(sizeof(lefloat64_t) == 8);
         assert(sizeof(lefloat32_t) == 4);
 
-		assert(sizeof(beuint64_t) == 8);
-		assert(sizeof(beuint32_t) == 4);
-		assert(sizeof(beuint16_t) == 2);
-		assert(sizeof(beint64_t) == 8);
-		assert(sizeof(beint32_t) == 4);
-		assert(sizeof(beint16_t) == 2);
+        assert(sizeof(beuint64_t) == 8);
+        assert(sizeof(beuint32_t) == 4);
+        assert(sizeof(beuint16_t) == 2);
+        assert(sizeof(beint64_t) == 8);
+        assert(sizeof(beint32_t) == 4);
+        assert(sizeof(beint16_t) == 2);
         assert(sizeof(befloat64_t) == 8);
         assert(sizeof(befloat32_t) == 4);
 
@@ -70,7 +70,7 @@ public:
     }
 
     void testPlatMemIsMem()
-	{
+    {
         union
         {
             uint8_t  c[2];
@@ -91,10 +91,10 @@ public:
         }
 
         printf("*** ::testPlatMemIsMem passed\n");
-	}
+    }
 
     void testOtherMemIsSwapped()
-	{
+    {
         union
         {
             uint8_t  c[2];
@@ -115,7 +115,7 @@ public:
         }
 
         printf("*** ::testOtherMemIsSwapped passed\n");
-	}
+    }
 
     void testArithmeticAssignment()
     {
@@ -152,7 +152,7 @@ public:
     }
 
     void testLittleCompoundArithmeticAssignment()
-	{
+    {
         leint16_t a;
         a = 2; a += 5; assert(a == 7);
         a = 2; a -= 5; assert(a == -3);
@@ -166,10 +166,10 @@ public:
         a = 126; a >>= 1; assert(a == 63);
 
         printf("*** ::testLittleCompoundArithmeticAssignment passed\n");
-	}
+    }
 
     void testBigCompoundArithmeticAssignment()
-	{
+    {
         beint16_t a;
         a = 2; a += 5; assert(a == 7);
         a = 2; a -= 5; assert(a == -3);
@@ -183,7 +183,7 @@ public:
         a = 126; a >>= 1; assert(a == 63);
 
         printf("*** ::testBigCompoundArithmeticAssignment passed\n");
-	}
+    }
 
     void testBigIsBig()
     {
