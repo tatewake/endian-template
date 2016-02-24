@@ -1,0 +1,169 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CB6FE363FE0559025FBC881 /* tEndianTests.cc in Sources */ = {isa = PBXBuildFile; fileRef = D5428C4A7DF57DFC27084E3F /* tEndianTests.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		71DFD536327B65F9C37A3F1F /* EndianTests.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = EndianTests.gyp; sourceTree = "<group>"; };
+		763EEDB08E4B9ACC678864FB /* tEndian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tEndian.h; sourceTree = "<group>"; };
+		D5428C4A7DF57DFC27084E3F /* tEndianTests.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tEndianTests.cc; sourceTree = "<group>"; };
+		F3798A3BDA694D0EF5102003 /* EndianTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EndianTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69D76E9A6919F81E59B10F77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03CF80E9176A8BA025AAC39F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				763EEDB08E4B9ACC678864FB /* tEndian.h */,
+				D5428C4A7DF57DFC27084E3F /* tEndianTests.cc */,
+			);
+			name = Source;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		37D88D6077126955630BE1D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3798A3BDA694D0EF5102003 /* EndianTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		855E05F016F3939D54221F49 = {
+			isa = PBXGroup;
+			children = (
+				03CF80E9176A8BA025AAC39F /* Source */,
+				37D88D6077126955630BE1D4 /* Products */,
+				F621DACB3863C7BE7EBC7EC2 /* Build */,
+			);
+			sourceTree = "<group>";
+		};
+		F621DACB3863C7BE7EBC7EC2 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				71DFD536327B65F9C37A3F1F /* EndianTests.gyp */,
+			);
+			name = Build;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C2542B3C61F5EB375FD728B /* EndianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23A5B75DA9687F48F139CEE0 /* Build configuration list for PBXNativeTarget "EndianTests" */;
+			buildPhases = (
+				AE676F9FB4E022A33EBB27A8 /* Sources */,
+				69D76E9A6919F81E59B10F77 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EndianTests;
+			productName = EndianTests;
+			productReference = F3798A3BDA694D0EF5102003 /* EndianTests.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		690FCE35A4A4A08184B92C3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = EC1FFD46DF11AD679410A94E /* Build configuration list for PBXProject "EndianTests" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 855E05F016F3939D54221F49;
+			projectDirPath = ../common;
+			projectRoot = "";
+			targets = (
+				6C2542B3C61F5EB375FD728B /* EndianTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE676F9FB4E022A33EBB27A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB6FE363FE0559025FBC881 /* tEndianTests.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		421C78DFDEE4F8D92DAC1C60 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
+				SYMROOT = ../../build/mac;
+			};
+			name = debug;
+		};
+		E5DEF5A70419568A60E5A59D /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DEAD_CODE_STRIPPING = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_FAST_MATH = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_STRICT_ALIASING = NO;
+				GCC_UNROLL_LOOPS = NO;
+				HEADER_SEARCH_PATHS = ../../;
+				LD_NO_PIE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = EndianTests;
+				WRAPPER_PREFIX = "";
+			};
+			name = debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23A5B75DA9687F48F139CEE0 /* Build configuration list for PBXNativeTarget "EndianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5DEF5A70419568A60E5A59D /* debug */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = debug;
+		};
+		EC1FFD46DF11AD679410A94E /* Build configuration list for PBXProject "EndianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421C78DFDEE4F8D92DAC1C60 /* debug */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 690FCE35A4A4A08184B92C3A /* Project object */;
+}
