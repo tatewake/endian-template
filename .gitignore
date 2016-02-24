@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+/build
+/output
+xcuserdata
+project.xcworkspace
