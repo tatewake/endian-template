@@ -27,6 +27,9 @@
 
 #pragma once
 
+#include <cassert>
+#include <cstdint>
+
 //Both tLittleEndian and tBigEndian are manufactured primitives
 //that are essentially immutable except for the assignment operators.
 //All math logic happens outside of the class in the native format

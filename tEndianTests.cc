@@ -25,8 +25,6 @@
  SOFTWARE.
  */
 
-#include <assert.h>
-#include <cstdint>
 #include "tEndian.h"
 
 #include <stdio.h>
