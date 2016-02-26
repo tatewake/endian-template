@@ -39,7 +39,6 @@ template<typename T>
 class tEndianBase
 {
 protected:
-    static T PassThru(const T& b) { return b; }
     static T Swap(const T& b)
     {
         T n;
@@ -87,7 +86,7 @@ protected:
     {
         const uint16_t i = 1;
 
-        return (reinterpret_cast<const char&>(i) == 1) ? tEndianBase<T>::PassThru(b) : tEndianBase<T>::Swap(b);
+        return (reinterpret_cast<const char&>(i) == 1) ? b : tEndianBase<T>::Swap(b);
     }
 public:
     // Constructors
@@ -138,7 +137,7 @@ protected:
     {
         const uint16_t i = 1;
 
-        return (reinterpret_cast<const char&>(i) == 1) ? tEndianBase<T>::Swap(b) : tEndianBase<T>::PassThru(b);
+        return (reinterpret_cast<const char&>(i) == 1) ? tEndianBase<T>::Swap(b) : b;
     }
 
 public:
