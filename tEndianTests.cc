@@ -69,15 +69,9 @@ public:
 
     void testPlatMemIsMem()
     {
-        union
-        {
-            uint8_t  c[2];
-            uint16_t i;
-        } u;
+        const uint16_t i = 1;
 
-        u.i = 0x0001;
-
-        if (u.c[0])
+        if (reinterpret_cast<const char&>(i) == 1)
         {
             leuint32 val = 0x12345678;
             assert(((uint32_t*)&val)[0] == 0x12345678);
@@ -93,15 +87,9 @@ public:
 
     void testOtherMemIsSwapped()
     {
-        union
-        {
-            uint8_t  c[2];
-            uint16_t i;
-        } u;
+        const uint16_t i = 1;
 
-        u.i = 0x0001;
-
-        if (u.c[0])
+        if (reinterpret_cast<const char&>(i) == 1)
         {
             beuint32 val = 0x12345678;
             assert(((uint32_t*)&val)[0] == 0x78563412);

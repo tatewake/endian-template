@@ -85,15 +85,9 @@ protected:
 protected:
     static T Transform(const T& b)
     {
-        union
-        {
-            uint8_t  c[2];
-            uint16_t i;
-        } u;
+        const uint16_t i = 1;
 
-        u.i = 0x0001;
-
-        return u.c[0] ? tEndianBase<T>::PassThru(b) : tEndianBase<T>::Swap(b);
+        return (reinterpret_cast<const char&>(i) == 1) ? tEndianBase<T>::PassThru(b) : tEndianBase<T>::Swap(b);
     }
 public:
     // Constructors
@@ -142,15 +136,9 @@ protected:
 protected:
     static T Transform(const T& b)
     {
-        union
-        {
-            uint8_t  c[2];
-            uint16_t i;
-        } u;
+        const uint16_t i = 1;
 
-        u.i = 0x0001;
-
-        return u.c[0] ? tEndianBase<T>::Swap(b) : tEndianBase<T>::PassThru(b);
+        return (reinterpret_cast<const char&>(i) == 1) ? tEndianBase<T>::Swap(b) : tEndianBase<T>::PassThru(b);
     }
 
 public:
