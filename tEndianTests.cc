@@ -48,23 +48,23 @@ public:
 
     void testSizeOf()
     {
-        assert(sizeof(leuint64_t) == 8);
-        assert(sizeof(leuint32_t) == 4);
-        assert(sizeof(leuint16_t) == 2);
-        assert(sizeof(leint64_t) == 8);
-        assert(sizeof(leint32_t) == 4);
-        assert(sizeof(leint16_t) == 2);
-        assert(sizeof(lefloat64_t) == 8);
-        assert(sizeof(lefloat32_t) == 4);
+        assert(sizeof(leuint64) == 8);
+        assert(sizeof(leuint32) == 4);
+        assert(sizeof(leuint16) == 2);
+        assert(sizeof(leint64) == 8);
+        assert(sizeof(leint32) == 4);
+        assert(sizeof(leint16) == 2);
+        assert(sizeof(lefloat64) == 8);
+        assert(sizeof(lefloat32) == 4);
 
-        assert(sizeof(beuint64_t) == 8);
-        assert(sizeof(beuint32_t) == 4);
-        assert(sizeof(beuint16_t) == 2);
-        assert(sizeof(beint64_t) == 8);
-        assert(sizeof(beint32_t) == 4);
-        assert(sizeof(beint16_t) == 2);
-        assert(sizeof(befloat64_t) == 8);
-        assert(sizeof(befloat32_t) == 4);
+        assert(sizeof(beuint64) == 8);
+        assert(sizeof(beuint32) == 4);
+        assert(sizeof(beuint16) == 2);
+        assert(sizeof(beint64) == 8);
+        assert(sizeof(beint32) == 4);
+        assert(sizeof(beint16) == 2);
+        assert(sizeof(befloat64) == 8);
+        assert(sizeof(befloat32) == 4);
 
         printf("*** ::testSizeOf passed\n");
     }
@@ -81,12 +81,12 @@ public:
 
         if (u.c[0])
         {
-            leuint32_t val = 0x12345678;
+            leuint32 val = 0x12345678;
             assert(((uint32_t*)&val)[0] == 0x12345678);
         }
         else
         {
-            beuint32_t val = 0x12345678;
+            beuint32 val = 0x12345678;
             assert(((uint32_t*)&val)[0] == 0x12345678);
         }
 
@@ -105,12 +105,12 @@ public:
 
         if (u.c[0])
         {
-            beuint32_t val = 0x12345678;
+            beuint32 val = 0x12345678;
             assert(((uint32_t*)&val)[0] == 0x78563412);
         }
         else
         {
-            leuint32_t val = 0x12345678;
+            leuint32 val = 0x12345678;
             assert(((uint32_t*)&val)[0] == 0x78563412);
         }
 
@@ -119,8 +119,8 @@ public:
 
     void testArithmeticAssignment()
     {
-        leint32_t a;
-        beint32_t b;
+        leint32 a;
+        beint32 b;
 
         // Prefix ++
         a = 0; b = 0;
@@ -153,7 +153,7 @@ public:
 
     void testLittleCompoundArithmeticAssignment()
     {
-        leint16_t a;
+        leint16 a;
         a = 2; a += 5; assert(a == 7);
         a = 2; a -= 5; assert(a == -3);
         a = 2; a *= 5; assert(a == 10);
@@ -170,7 +170,7 @@ public:
 
     void testBigCompoundArithmeticAssignment()
     {
-        beint16_t a;
+        beint16 a;
         a = 2; a += 5; assert(a == 7);
         a = 2; a -= 5; assert(a == -3);
         a = 2; a *= 5; assert(a == 10);
@@ -188,10 +188,10 @@ public:
     void testBigIsBig()
     {
         {
-            beuint64_t   big     = 0x1122334455667788;
-            beuint64_t   invbig  = 0x8877665544332211;
-            leuint64_t   lit     = 0x1122334455667788;
-            beuint64_t   other   = 0x1122334455667788;
+            beuint64   big     = 0x1122334455667788;
+            beuint64   invbig  = 0x8877665544332211;
+            leuint64   lit     = 0x1122334455667788;
+            beuint64   other   = 0x1122334455667788;
 
             assert( ((uint64_t*)&big)[0] != ((uint64_t*)&invbig)[0]);
             assert( ((uint64_t*)&big)[0] == ((uint64_t*)&other)[0] );
@@ -200,10 +200,10 @@ public:
             assert( ((uint64_t*)&invbig)[0] == ((uint64_t*)&lit)[0] );
         }
         {
-            beint32_t   big     = 0x12345678;
-            beint32_t   invbig  = 0x78563412;
-            leint32_t   lit     = 0x12345678;
-            beint32_t   other   = 0x12345678;
+            beint32   big     = 0x12345678;
+            beint32   invbig  = 0x78563412;
+            leint32   lit     = 0x12345678;
+            beint32   other   = 0x12345678;
 
             assert( ((uint32_t*)&big)[0] != ((uint32_t*)&invbig)[0]);
             assert( ((uint32_t*)&big)[0] == ((uint32_t*)&other)[0] );
@@ -212,10 +212,10 @@ public:
             assert( ((uint32_t*)&invbig)[0] == ((uint32_t*)&lit)[0] );
         }
         {
-            beint16_t   big     = 0x0102;
-            beint16_t   invbig  = 0x0201;
-            leint16_t   lit     = 0x0102;
-            beint16_t   other   = 0x0102;
+            beint16   big     = 0x0102;
+            beint16   invbig  = 0x0201;
+            leint16   lit     = 0x0102;
+            beint16   other   = 0x0102;
 
             assert( ((uint16_t*)&big)[0] != ((uint16_t*)&invbig)[0]);
             assert( ((uint16_t*)&big)[0] == ((uint16_t*)&other)[0] );
@@ -230,10 +230,10 @@ public:
     void testLittleIsLittle()
     {
         {
-            leuint64_t   lit     = 0x1122334455667788;
-            leuint64_t   invlit  = 0x8877665544332211;
-            leuint64_t   plat    = 0x1122334455667788;
-            beuint64_t   big     = 0x1122334455667788;
+            leuint64   lit     = 0x1122334455667788;
+            leuint64   invlit  = 0x8877665544332211;
+            leuint64   plat    = 0x1122334455667788;
+            beuint64   big     = 0x1122334455667788;
 
             assert( ((uint32_t*)&lit)[0] != ((uint32_t*)&invlit)[0]);
             assert( ((uint32_t*)&lit)[0] != ((uint32_t*)&big)[0] );
@@ -242,10 +242,10 @@ public:
             assert( ((uint32_t*)&invlit)[0] != ((uint32_t*)&plat)[0] );
         }
         {
-            leint32_t   lit     = 0x12345678;
-            leint32_t   invlit  = 0x78563412;
-            leint32_t   plat    = 0x12345678;
-            beint32_t   big     = 0x12345678;
+            leint32   lit     = 0x12345678;
+            leint32   invlit  = 0x78563412;
+            leint32   plat    = 0x12345678;
+            beint32   big     = 0x12345678;
 
             assert( ((uint32_t*)&lit)[0] != ((uint32_t*)&invlit)[0]);
             assert( ((uint32_t*)&lit)[0] != ((uint32_t*)&big)[0] );
@@ -254,10 +254,10 @@ public:
             assert( ((uint32_t*)&invlit)[0] != ((uint32_t*)&plat)[0] );
         }
         {
-            leint16_t   lit     = 0x0102;
-            leint16_t   invlit  = 0x0201;
-            leint16_t   plat    = 0x0102;
-            beint16_t   big     = 0x0102;
+            leint16   lit     = 0x0102;
+            leint16   invlit  = 0x0201;
+            leint16   plat    = 0x0102;
+            beint16   big     = 0x0102;
 
             assert( ((uint16_t*)&lit)[0] != ((uint16_t*)&invlit)[0]);
             assert( ((uint16_t*)&lit)[0] != ((uint16_t*)&big)[0] );

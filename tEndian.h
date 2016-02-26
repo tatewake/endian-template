@@ -187,24 +187,24 @@ public:
     tBigEndian& operator >>=(const T& b) { *this = T(T(*this) >> b); return *this; }
 };
 
-typedef tLittleEndian<int16_t>      leint16_t;
-typedef tLittleEndian<int32_t>      leint32_t;
-typedef tLittleEndian<int64_t>      leint64_t;
+typedef tLittleEndian<int16_t>      leint16;
+typedef tLittleEndian<int32_t>      leint32;
+typedef tLittleEndian<int64_t>      leint64;
 
-typedef tLittleEndian<uint16_t>     leuint16_t;
-typedef tLittleEndian<uint32_t>     leuint32_t;
-typedef tLittleEndian<uint64_t>     leuint64_t;
+typedef tLittleEndian<uint16_t>     leuint16;
+typedef tLittleEndian<uint32_t>     leuint32;
+typedef tLittleEndian<uint64_t>     leuint64;
 
-typedef tLittleEndian<float>        lefloat32_t;
-typedef tLittleEndian<double>       lefloat64_t;
+typedef tLittleEndian<float>        lefloat32;
+typedef tLittleEndian<double>       lefloat64;
 
-typedef tBigEndian<int16_t>         beint16_t;
-typedef tBigEndian<int32_t>         beint32_t;
-typedef tBigEndian<int64_t>         beint64_t;
+typedef tBigEndian<int16_t>         beint16;
+typedef tBigEndian<int32_t>         beint32;
+typedef tBigEndian<int64_t>         beint64;
 
-typedef tBigEndian<uint16_t>        beuint16_t;
-typedef tBigEndian<uint32_t>        beuint32_t;
-typedef tBigEndian<uint64_t>        beuint64_t;
+typedef tBigEndian<uint16_t>        beuint16;
+typedef tBigEndian<uint32_t>        beuint32;
+typedef tBigEndian<uint64_t>        beuint64;
 
-typedef tBigEndian<float>           befloat32_t;
-typedef tBigEndian<double>          befloat64_t;
+typedef tBigEndian<float>           befloat32;
+typedef tBigEndian<double>          befloat64;
