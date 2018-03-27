@@ -39,6 +39,11 @@ template<typename T>
 class tEndianBase
 {
 protected:
+#if _MSC_VER
+#pragma warning ( push ) 
+#pragma warning ( disable : 4701 )
+#pragma warning ( disable : 4789 )
+#endif
     static T Swap(const T& b)
     {
         T n;
@@ -72,6 +77,9 @@ protected:
 
         return n;
     }
+#if _MSC_VER
+#pragma warning ( pop )
+#endif
 };
 
 template<typename T>
