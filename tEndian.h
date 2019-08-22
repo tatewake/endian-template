@@ -99,8 +99,7 @@ protected:
     }
 public:
     // Constructors
-    tLittleEndian() { }
-    tLittleEndian(const tLittleEndian& b) : mData(b.mData) { }
+    tLittleEndian() = default;
 
     //If we endian swap, it happens in two places:
     //1. Set an OE from a PE
@@ -153,8 +152,7 @@ protected:
 
 public:
     // Constructors
-    tBigEndian() { }
-    tBigEndian(const tBigEndian& b) : mData(b.mData) { }
+    tBigEndian() = default;
     
     //If we endian swap, it happens in two places:
     //1. Set an OE from a PE
