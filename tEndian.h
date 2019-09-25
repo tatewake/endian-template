@@ -132,7 +132,7 @@ public:
     tLittleEndian& operator <<=(const T& b) { *this = T(T(*this) << b); return *this; }
     tLittleEndian& operator >>=(const T& b) { *this = T(T(*this) >> b); return *this; }
     friend std::ostream& operator <<(std::ostream &out, const tLittleEndian b) { out << T(b); return out; }
-    friend std::istream& operator >>(std::istream &in, tLittleEndian &b)       { in >> b.mData;    return in; }
+    friend std::istream& operator >>(std::istream &in, tLittleEndian &b)       { T val; in >> val; b = val; return in; }
 };
 
 template<typename T>
