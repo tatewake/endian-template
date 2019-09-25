@@ -29,6 +29,7 @@
 
 #include <cassert>
 #include <cstdint>
+#include <iostream>
 
 //Both tLittleEndian and tBigEndian are manufactured primitives
 //that are essentially immutable except for the assignment operators.
@@ -98,8 +99,7 @@ protected:
     }
 public:
     // Constructors
-    tLittleEndian() { }
-    tLittleEndian(const tLittleEndian& b) : mData(b.mData) { }
+    tLittleEndian() = default;
 
     //If we endian swap, it happens in two places:
     //1. Set an OE from a PE
@@ -131,6 +131,8 @@ public:
     tLittleEndian& operator ^=(const T& b)  { *this = T(*this) ^ b; return *this; }
     tLittleEndian& operator <<=(const T& b) { *this = T(T(*this) << b); return *this; }
     tLittleEndian& operator >>=(const T& b) { *this = T(T(*this) >> b); return *this; }
+    friend std::ostream& operator <<(std::ostream &out, const tLittleEndian b) { out << T(b); return out; }
+    friend std::istream& operator >>(std::istream &in, tLittleEndian &b)       { in >> b.mData;    return in; }
 };
 
 template<typename T>
@@ -150,8 +152,7 @@ protected:
 
 public:
     // Constructors
-    tBigEndian() { }
-    tBigEndian(const tBigEndian& b) : mData(b.mData) { }
+    tBigEndian() = default;
     
     //If we endian swap, it happens in two places:
     //1. Set an OE from a PE
@@ -183,6 +184,8 @@ public:
     tBigEndian& operator ^=(const T& b)  { *this = T(*this) ^ b; return *this; }
     tBigEndian& operator <<=(const T& b) { *this = T(T(*this) << b); return *this; }
     tBigEndian& operator >>=(const T& b) { *this = T(T(*this) >> b); return *this; }
+    friend std::ostream& operator <<(std::ostream &out, const tBigEndian b) { out << T(b); return out; }
+    friend std::istream& operator >>(std::istream &in, tBigEndian &b)       { T val; in >> val; b = val;    return in; }
 };
 
 typedef tLittleEndian<int16_t>      leint16;
